@@ -21,7 +21,7 @@ public class EmailService(IConfiguration configuration, EmailClient client)
         senderAddress: _configuration["ACS:SenderAddress"],
         content: new EmailContent(request.Subject)
         {
-            PlainText = request.Body,
+            PlainText = request.PlainText,
             Html = request.Html
         },
         recipients: new EmailRecipients(recipients));
